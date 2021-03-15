@@ -1,3 +1,18 @@
 module.exports = function check(str, bracketsConfig) {
-  // your solution
+    
+    console.log(str)
+    console.log(bracketsConfig)
+    while(str !== '') {    
+        let flag = false;
+        bracketsConfig.forEach(element => { 
+          let brackets = element[0] + element[1]; 
+          console.log(brackets)
+            if (str.includes(brackets)){ 
+                str = str.replace(brackets, ''); 
+                flag = true;
+            }
+        });
+        if (flag === false) break;
+      }
+      return (str === '') ? true  : false;
 }
